@@ -10,13 +10,11 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faGear,
     faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
-import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import Menu from '~/component/Popper/Menu';
@@ -25,7 +23,9 @@ import { Wrapper as PopperWrapper } from '~/component/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/component/AccountItem';
+import Image from '~/component/Image';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { InboxIcon, MessageIcon } from '~/component/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -135,16 +135,13 @@ function Header() {
                 <div className={cx('action')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 100]} content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
-                                </button>
-                            </Tippy>
+                            <MessageIcon className={cx('action-btn')} />
                             {/* <Tippy interactive content="inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <FontAwesomeIcon icon={faMessage} />
                                 </button>
                             </Tippy> */}
+                            <InboxIcon className={cx('action-btn')} />
                         </>
                     ) : (
                         <>
@@ -156,7 +153,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
                                 src="https://p9-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/1663032433476609.jpeg?x-expires=1671786000&x-signature=BEaDNb5E5b2vF1R51HDxZMGORzU%3D"
