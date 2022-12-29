@@ -8,7 +8,7 @@ import Profile from '~/pages/Profile';
 export const publicRoutes = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile, layout: null },
+    { path: '/@:nickname', component: Profile, layout: null },
     { path: '/upload', component: Upload, layout: HeaderOnly },
 ];
 export const privateRoutes = [];

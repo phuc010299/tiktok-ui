@@ -33,12 +33,13 @@
     }
 
     &::after {
-        content : "";
-        position: absolute;
-        top     : 9px;
-        right   : 68px;
-        height  : calc(var(--search-height) - 18px);
-        color   : rgba(22, 24, 35, .12);
+        content         : "";
+        position        : absolute;
+        top             : 9px;
+        right           : 52px;
+        width           : 1px;
+        height          : 28px;
+        background-color: rgba(22, 24, 35, .12);
 
     }
 
@@ -62,6 +63,20 @@
     top      : 50%;
     transform: translateY(-50%);
     color    : rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 .search-btn {
