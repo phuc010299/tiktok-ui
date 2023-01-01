@@ -11,6 +11,9 @@ import {
     faGear,
     faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
+import routesConfig from '~/config/routes';
 import 'tippy.js/dist/tippy.css';
 import Search from '../Search';
 import Menu from '~/component/Popper/Menu';
@@ -89,9 +92,10 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
-                </div>
+                </Link>
+
                 {/* search */}
                 <Search />
 
