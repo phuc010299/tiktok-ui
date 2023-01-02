@@ -7,7 +7,7 @@ import AccountItem from '~/component/AccountItem';
 import classNames from 'classnames/bind';
 
 // import request from '~/utils/request';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
 import { SearchIcon } from '~/component/Icons';
@@ -92,7 +92,11 @@ function Search() {
                         </button>
                     )}
 
-                    {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+                    {loading && (
+                        <button>
+                            <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        </button>
+                    )}
 
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                         <SearchIcon />
