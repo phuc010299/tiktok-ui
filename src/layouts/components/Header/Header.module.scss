@@ -42,25 +42,27 @@
 }
 
 .action-btn {
+    position        : relative;
     background-color: transparent;
     margin          : 0 8px;
 
+    .badge {
+        position        : absolute;
+        top             : -8px;
+        right           : -3.5px;
+        padding         : 0px 10px;
+        height          : 1.8rem;
+        line-height     : 2rem;
+        border-radius   : 11px;
+        font-size       : 1.4rem;
+        font-weight     : 600;
+        color           : var(--white);
+        font-family     : var(--font-family);
+        background-color: var(--primary);
+    }
+
 }
 
-.badge {
-    position        : absolute;
-    top             : 8px;
-    right           : 334px;
-    padding         : 0px 10px;
-    height          : 2rem;
-    line-height     : 2rem;
-    border-radius   : 11px;
-    font-size       : 1.4rem;
-    font-weight     : 600;
-    color           : var(--white);
-    font-family     : var(--font-family);
-    background-color: var(--primary);
-}
 
 .user-avatar {
     height       : 32px;
